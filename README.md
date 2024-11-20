@@ -20,19 +20,19 @@ So what's the GUI?
 We will be working with basically 6 tabs:
 
 **Summary**
-![Summary tab](/artifacts/documentation/Cooker sNest - Wireframe - Summary.png)
+![Cookers Nest - Wireframe - Summary](https://github.com/user-attachments/assets/bae3df33-dfbc-4a69-b61a-d8f430e134c1)
 
 **Items**
-![Items tab](/artifacts/documentation/Cookers Nest - Wireframe - Items.png)
+![Cookers Nest - Wireframe - Items](https://github.com/user-attachments/assets/453eb375-0726-43a7-914e-25df0f50353f)
 
 **Recipe**
-![Items tab](/artifacts/documentation/Cookers Nest - Wireframe - Recipe.png)
+![Cookers Nest - Wireframe - Recipe](https://github.com/user-attachments/assets/f540f7d5-c99a-4676-a2cb-603ea7f3f958)
 
 **Clients**
-![Items tab](/artifacts/documentation/Cookers Nest - Wireframe - Clients.png)
+![Cookers Nest - Wireframe - Clients](https://github.com/user-attachments/assets/49dac9d1-385e-492a-8463-d06f2d333808)
 
 **Sells**
-![Items tab](/artifacts/documentation/Cookers Nest - Wireframe - Sells.png)
+![Cookers Nest - Wireframe - Sells](https://github.com/user-attachments/assets/edd3dedc-0523-472e-a7c6-20c11bee3aa5)
 
 
 Outro
