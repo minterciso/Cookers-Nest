@@ -17,21 +17,26 @@ tracking via a Spreadsheet. So, how about I create a Qt application to make the 
 
 So what's the GUI?
 ------------------
-We will be working with basically 6 tabs:
+We will be working with basically 6 tabs (that can change over time):
 
 **Summary**
+
 ![Cookers Nest - Wireframe - Summary](https://github.com/user-attachments/assets/bae3df33-dfbc-4a69-b61a-d8f430e134c1)
 
 **Items**
+
 ![Cookers Nest - Wireframe - Items](https://github.com/user-attachments/assets/453eb375-0726-43a7-914e-25df0f50353f)
 
 **Recipe**
+
 ![Cookers Nest - Wireframe - Recipe](https://github.com/user-attachments/assets/f540f7d5-c99a-4676-a2cb-603ea7f3f958)
 
 **Clients**
+
 ![Cookers Nest - Wireframe - Clients](https://github.com/user-attachments/assets/49dac9d1-385e-492a-8463-d06f2d333808)
 
 **Sells**
+
 ![Cookers Nest - Wireframe - Sells](https://github.com/user-attachments/assets/edd3dedc-0523-472e-a7c6-20c11bee3aa5)
 
 
