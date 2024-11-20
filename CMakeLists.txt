@@ -11,6 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Sql)
 
 set(TS_FILES Cookers-Nest_pt_BR.ts)
 
@@ -27,7 +28,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         README.md
+        databasemanager.h databasemanager.cpp
     )
+# Add resources
+qt_add_resources(Cookers-Nest "sql"
+    PREFIX "/"
+    FILES artifacts/database/CookersNestTemplate.db)
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Cookers-Nest APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
@@ -51,6 +57,7 @@ else()
 endif()
 
 target_link_libraries(Cookers-Nest PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Cookers-Nest PRIVATE Qt${QT_VERSION_MAJOR}::Sql)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
