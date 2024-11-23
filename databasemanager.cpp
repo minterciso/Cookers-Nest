@@ -20,7 +20,7 @@ DatabaseManager::DatabaseManager() {
 }
 
 DatabaseManager::~DatabaseManager() {
-    closeDatabase();
+    // closeDatabase();
 }
 
 bool DatabaseManager::openDatabase() {

@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
             break;
         }
     }
-    // Connect the signal "about to close", and close the database
+    // Connect the signal "about to quit", and close the database
     QObject::connect(&a, &QCoreApplication::aboutToQuit, []() {
         DatabaseManager::instance().closeDatabase();
     });
