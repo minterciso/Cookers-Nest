@@ -60,6 +60,14 @@ public:
      */
     QString getError();
 
+    /**
+     * @brief Create a product on the database.
+     * @param product A pointer to a QString with the product name (max of 200 characters)
+     * @param basePrice The base price for the product
+     * @return A boolean to depict if the product was created successfully. If there's an error, the error parameter will be set.
+     */
+    bool createProduct(QString &product, float basePrice);
+
 private:
     // Remove some operators, and ensure nobody calls the constructor and destructor, except the Singleton
     DatabaseManager();

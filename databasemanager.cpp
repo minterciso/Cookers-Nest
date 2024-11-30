@@ -3,6 +3,8 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QFile>
+#include <QSqlTableModel>
+#include <QSqlRecord>
 
 DatabaseManager& DatabaseManager::instance() {
     static DatabaseManager instance;
@@ -86,4 +88,40 @@ QString DatabaseManager::getError() {
     QString retError = this->error;
     this->error.clear();
     return retError;
+}
+
+/* Methods to work with the database */
+bool DatabaseManager::createProduct(QString &product, float basePrice) {
+    // First check if the product name is of 200 characters at most
+    qDebug() << "[DatabaseManager] Trying to insert product '" << product << "' with base price " << basePrice;
+    if(product.length() > 200){
+        this->error.append("Product name '");
+        this->error.append(product);
+        this->error.append("' is greater than 200 characters");
+        qWarning() << "[DatabaseManager] " << this->error;
+        return false;
+    }
+    QSqlTableModel model;
+    model.setTable("Products");
+    // Create a new record
+    QSqlRecord newProduct = model.record();
+    newProduct.setValue("name", product);
+    newProduct.setValue("base_price", basePrice);
+    // Insert the new product on the database
+    qDebug() << "[DatabaseManager] Inserting";
+    if(model.insertRecord(-1, newProduct) == false){
+        this->error.append(model.lastError().text());
+        qWarning() << "[DatabaseManager] " << this->error;
+        return false;
+    }
+    // Submit the changes to the database
+    qDebug() << "[DatabaseManager] Submiting";
+    if(model.submitAll() == false){
+        this->error.append(model.lastError().text());
+        qWarning() << "[DatabaseManager] " << this->error;
+        return false;
+    }
+    // All is good, so return true
+    return true;
+
 }
